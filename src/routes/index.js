@@ -1,12 +1,29 @@
-const userRoute = require("./userRoute");
-const serviceRoute = require("./serviceRoute");
-const doctorRoute = require("./doctorRoute");
+// const userRoute = require("./userRoute");
+// const serviceRoute = require("./serviceRoute");
+// const doctorRoute = require("./doctorRoute");
+const route = require("express").Router();
+const db = require("../models");
 
 function routes(app) {
   // app.use("/user", userRoute);
   // app.use("/service", serviceRoute);
   // app.use("/doctor", doctorRoute.get("/"));
   // app.use()
+  app.use(
+    "/doctor",
+    route.get("/x", async (req, res, next) => {
+      try {
+        const result = await db.User.findAll({
+          where: {
+            roleId: "R2",
+          },
+        });
+        return res.status(200).json(result);
+      } catch (error) {
+        return res.status(500).json(error);
+      }
+    })
+  );
 }
 
 module.exports = routes;

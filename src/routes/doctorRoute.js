@@ -1,7 +1,7 @@
 const route = require("express").Router();
 const doctorController = require("../controllers/doctorController");
 
-// route.get("/getAllDoctors", doctorController.getAllDoctor);
+route.get("/getAllDoctors", doctorController.getAllDoctor);
 route.get("/test", (req, res, next) => {
   return res.status(200).json("ok binhf thuong");
 });

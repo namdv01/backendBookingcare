@@ -40,77 +40,77 @@ const doctorController = {
       return res.status(500).json({ error });
     }
   },
-  // getAllDoctor: async (req, res, next) => {
-  //   try {
-  //     const doctors = await db.User.findAll({
-  //       where: {
-  //         roleId: "R2",
-  //       },
-  //       attributes: {
-  //         exclude: ["password"],
-  //       },
-  //       include: [
-  //         {
-  //           model: db.Markdown,
-  //           as: "idData",
-  //           attributes: ["contentHTML", "contentMarkdown", "description"],
-  //         },
-  //         {
-  //           model: db.DoctorInfo,
-  //           as: "idInfoData",
-  //           attributes: [
-  //             "priceId",
-  //             "provinceId",
-  //             "paymentId",
-  //             "specialtyId",
-  //             "clinicId",
-  //             "nameClinic",
-  //             "addressClinic",
-  //             "note",
-  //             "count",
-  //           ],
-  //           include: [
-  //             {
-  //               model: db.AllCode,
-  //               as: "priceData",
-  //               attributes: ["valueVi", "valueEn"],
-  //             },
-  //             {
-  //               model: db.AllCode,
-  //               as: "provinceData",
-  //               attributes: ["valueVi", "valueEn"],
-  //             },
-  //             {
-  //               model: db.AllCode,
-  //               as: "paymentData",
-  //               attributes: ["valueVi", "valueEn"],
-  //             },
-  //             {
-  //               model: db.Specialty,
-  //               as: "specialtyData",
-  //               attributes: ["id", "name", "description"],
-  //             },
-  //             {
-  //               model: db.Clinic,
-  //               as: "clinicData",
-  //               attributes: ["id", "name", "address", "description", "image"],
-  //             },
-  //           ],
-  //           raw: true,
-  //           nest: true,
-  //         },
-  //       ],
-  //       raw: true,
-  //       nest: true,
-  //     });
-  //     console.log(doctors);
-  //     return res
-  //       .status(200)
-  //       .json({ success: "get all doctors success", doctors });
-  //   } catch (error) {
-  //     return res.status(500).json({ error });
-  //   }
-  // },
+  getAllDoctor: async (req, res, next) => {
+    try {
+      const doctors = await db.User.findAll({
+        where: {
+          roleId: "R2",
+        },
+        attributes: {
+          exclude: ["password"],
+        },
+        include: [
+          {
+            model: db.Markdown,
+            as: "idData",
+            attributes: ["contentHTML", "contentMarkdown", "description"],
+          },
+          {
+            model: db.DoctorInfo,
+            as: "idInfoData",
+            attributes: [
+              "priceId",
+              "provinceId",
+              "paymentId",
+              "specialtyId",
+              "clinicId",
+              "nameClinic",
+              "addressClinic",
+              "note",
+              "count",
+            ],
+            include: [
+              {
+                model: db.AllCode,
+                as: "priceData",
+                attributes: ["valueVi", "valueEn"],
+              },
+              {
+                model: db.AllCode,
+                as: "provinceData",
+                attributes: ["valueVi", "valueEn"],
+              },
+              {
+                model: db.AllCode,
+                as: "paymentData",
+                attributes: ["valueVi", "valueEn"],
+              },
+              {
+                model: db.Specialty,
+                as: "specialtyData",
+                attributes: ["id", "name", "description"],
+              },
+              {
+                model: db.Clinic,
+                as: "clinicData",
+                attributes: ["id", "name", "address", "description", "image"],
+              },
+            ],
+            raw: true,
+            nest: true,
+          },
+        ],
+        raw: true,
+        nest: true,
+      });
+      console.log(doctors);
+      return res
+        .status(200)
+        .json({ success: "get all doctors success", doctors });
+    } catch (error) {
+      return res.status(500).json({ error });
+    }
+  },
 
   // postDetailDoctor: async (req, res, next) => {
   //   try {

@@ -14,16 +14,34 @@ require("dotenv").config();
 //     },
 //   }
 // );
-const sequelize = new Sequelize(`${process.env.DATA_HEROKU_API}`, {
-  logging: false,
+// const sequelize = new Sequelize(`${process.env.DATA_HEROKU_API}`, {
+//   logging: false,
+//   dialect: "postgres",
+//   dialectOptions: {
+//     ssl: {
+//       rejectUnauthorized: false,
+//       require: true,
+//     },
+//   },
+// });
+
+const customConfig = {
+  host: process.env.DB_HOST,
   dialect: "postgres",
+  logging: false,
   dialectOptions: {
     ssl: {
-      rejectUnauthorized: false,
       require: true,
+      rejectUnauthorized: false,
     },
   },
-});
+};
+const sequelize = new Sequelize(
+  process.env.DB_DATABASE,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  customConfig
+);
 
 let connectDB = async () => {
   try {

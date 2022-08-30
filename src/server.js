@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 const connectDB = require("./connectDB");
 const dotenv = require("dotenv").config();
-// const db = require("./models/index");
+const db = require("./models/index");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

@@ -1,13 +1,13 @@
-const Router = require("express").Router();
+const route = require("express").Router();
 const doctorController = require("../controllers/doctorController");
 
-Router.get("/getAllDoctors", doctorController.getAllDoctor);
-// Router.get("/getDoctors/:limit", doctorController.getDoctor);
-// Router.post("/getDoctorInfo", doctorController.getDoctorInfo);
-// Router.post("/postDetailDoctor", doctorController.postDetailDoctor);
-// Router.get("/doctorDetail/:idDoctor", doctorController.getDetailDoctor);
-// Router.post("/bulkSchedule", doctorController.postBulkSchedule);
-// Router.get("/getScheduleDoctor/:idDoctor", doctorController.getScheduleDoctor);
-// Router.post("/getScheduleOndayDoctor", doctorController.getScheduleOnDayDoctor);
+route.get("/getAllDoctors", doctorController.getAllDoctor);
+// route.get("/getDoctors/:limit", doctorController.getDoctor);
+// route.post("/getDoctorInfo", doctorController.getDoctorInfo);
+// route.post("/postDetailDoctor", doctorController.postDetailDoctor);
+// route.get("/doctorDetail/:idDoctor", doctorController.getDetailDoctor);
+// route.post("/bulkSchedule", doctorController.postBulkSchedule);
+// route.get("/getScheduleDoctor/:idDoctor", doctorController.getScheduleDoctor);
+// route.post("/getScheduleOndayDoctor", doctorController.getScheduleOnDayDoctor);
 
-module.exports = Router;
+module.exports = route;

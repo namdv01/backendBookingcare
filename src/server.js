@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const app = express();
-// const routes = require("./routes/index");
+const routes = require("./routes");
 const cors = require("cors");
 const connectDB = require("./connectDB");
 const db = require("./models");
@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-// routes(app);
+routes(app);
 connectDB();
 
 app.get("/", async (req, res, next) => {

@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 // const routes = require("./routes/index");
 const cors = require("cors");
-// const connectDB = require("./connectDB");
+const connectDB = require("./connectDB");
 const dotenv = require("dotenv").config();
 
 app.use(express.json());
@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // routes(app);
-// connectDB();
+connectDB();
 
 app.get("/", (req, res, next) => {
   return res.status(200).json("chayj ddc");

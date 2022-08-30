@@ -2,7 +2,7 @@
 // const serviceRoute = require("./serviceRoute");
 const doctorRoute = require("./doctorRoute");
 const route = require("express").Router();
-// const db = require("../models");
+const db = require("../models");
 
 function routes(app) {
   // app.use("/user", userRoute);

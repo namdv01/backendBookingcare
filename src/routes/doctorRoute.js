@@ -1,5 +1,5 @@
 const route = require("express").Router();
-const doctorController = require("../controllers/doctorController");
+// const doctorController = require("../controllers/doctorController");
 
 // route.get("/getAllDoctors", doctorController.getAllDoctor);
 route.get("/test", (req, res, next) => {

@@ -1,4 +1,4 @@
-const db = require("../models/index");
+const db = require("../models");
 const { Op } = require("sequelize");
 const servicesController = {
   getAllCodes: async (req, res, next) => {

@@ -1,4 +1,4 @@
-const db = require("../models/index");
+const db = require("../models");
 const cloudinary = require("../cloudinary/cloudinary");
 
 const clinicController = {

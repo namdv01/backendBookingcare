@@ -1,4 +1,4 @@
-const db = require("../models/index");
+const db = require("../models");
 const configMail = require("../email/configEmail");
 const bookingController = {
   bookSchedule: async (req, res, next) => {

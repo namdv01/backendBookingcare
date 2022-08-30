@@ -12,6 +12,10 @@ app.use(cors());
 routes(app);
 connectDB();
 
+app.get("/", (req, res, next) => {
+  return res.status(200).json("chayj ddc");
+});
+
 const port = process.env.PORT || 1234;
 
 app.listen(port, () => {

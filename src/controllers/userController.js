@@ -6,64 +6,63 @@ const cloudinary = require("../cloudinary/cloudinary");
 
 const userController = {
   createNewUser: async (req, res, next) => {
-    return res.status(200).json("chua loi");
-    // try {
-    //   let {
-    //     email,
-    //     password,
-    //     fullName,
-    //     address,
-    //     genderId,
-    //     roleId,
-    //     phoneNumber,
-    //     positionId,
-    //   } = req.body;
-    //   console.log(req.body);
-    //   const checkEmail = (await db.User.findOne({
-    //     where: {
-    //       email: email,
-    //       // attributes: {
-    //       //   exclude: ["password"],
-    //       // },
-    //     },
-    //   }))
-    //     ? true
-    //     : false;
-    //   if (!checkEmail) {
-    //     const salt = bcrypt.genSaltSync(10);
-    //     password = bcrypt.hashSync(password, salt);
-    //     const image = await cloudinary.uploader.upload(req.file.path, {
-    //       folder: "/bookingcare/avatar",
-    //     });
-    //     const user = await db.User.create(
-    //       {
-    //         email,
-    //         password,
-    //         fullName,
-    //         address,
-    //         genderId,
-    //         roleId,
-    //         phoneNumber,
-    //         positionId,
-    //         image: image.url,
-    //       },
-    //       {
-    //         plain: true,
-    //       }
-    //     );
-    //     return res.status(200).json({
-    //       success: "Create new user success",
-    //       user,
-    //     });
-    //   } else {
-    //     return res.status(500).json({
-    //       error: "Email has already",
-    //       errCode: 2,
-    //     });
-    //   }
-    // } catch (error) {
-    //   return res.status(500).json("Error: " + error);
-    // }
+    try {
+      let {
+        email,
+        password,
+        fullName,
+        address,
+        genderId,
+        roleId,
+        phoneNumber,
+        positionId,
+      } = req.body;
+      console.log(req.body);
+      const checkEmail = (await db.User.findOne({
+        where: {
+          email: email,
+          // attributes: {
+          //   exclude: ["password"],
+          // },
+        },
+      }))
+        ? true
+        : false;
+      if (!checkEmail) {
+        const salt = await bcrypt.genSaltSync(10);
+        password = await bcrypt.hashSync(password, salt);
+        const image = await cloudinary.uploader.upload(req.file.path, {
+          folder: "/bookingcare/avatar",
+        });
+        const user = await db.User.create(
+          {
+            email,
+            password,
+            fullName,
+            address,
+            genderId,
+            roleId,
+            phoneNumber,
+            positionId,
+            image: image.url,
+          },
+          {
+            plain: true,
+          }
+        );
+        return res.status(200).json({
+          success: "Create new user success",
+          user,
+        });
+      } else {
+        return res.status(500).json({
+          error: "Email has already",
+          errCode: 2,
+        });
+      }
+    } catch (error) {
+      return res.status(500).json("Error: " + error);
+    }
   },
   getUserById: async (req, res, next) => {
     try {

@@ -15,11 +15,11 @@ connectDB();
 
 app.get("/testdoctor", async (req, res, next) => {
   try {
-    // const result = await db.User.findAll({
-    //   where: {
-    //     roleId: "R2",
-    //   },
-    // });
+    const result = await db.User.findAll({
+      where: {
+        roleId: "R2",
+      },
+    });
     return res.status(200).json({ success: "test db ok" });
   } catch (error) {
     return res.status(500).json({ error });

@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 const connectDB = require("./connectDB");
 const dotenv = require("dotenv").config();
-const db = require("./models/index");
+// const db = require("./models/index");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -15,12 +15,12 @@ connectDB();
 
 app.get("/testdoctor", async (req, res, next) => {
   try {
-    const result = await db.User.findAll({
-      where: {
-        roleId: "R2",
-      },
-    });
-    return res.status(200).json({ success: "test db ok", result });
+    // const result = await db.User.findAll({
+    //   where: {
+    //     roleId: "R2",
+    //   },
+    // });
+    return res.status(200).json({ success: "test db ok" });
   } catch (error) {
     return res.status(500).json({ error });
   }

@@ -26,8 +26,8 @@ routes(app);
 //   }
 // });
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
-app.listen(port, "0.0.0.0", () => {
+app.listen(port, () => {
   console.log("server đã chạy tại cổng " + port);
 });

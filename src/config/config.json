@@ -1,0 +1,30 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "123456",
+    "database": "class",
+    "host": "127.0.0.1",
+    "dialect": "postgres",
+    "query": {
+      "raw": true
+    },
+    "dialectOptions": {
+      "useUTC": false
+    },
+    "timezone": "+07:00"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

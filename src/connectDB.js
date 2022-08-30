@@ -15,11 +15,12 @@ require("dotenv").config();
 //   }
 // );
 const sequelize = new Sequelize(`${process.env.DATA_HEROKU_API}`, {
-  // logging: false,
+  logging: false,
   dialect: "postgres",
   dialectOptions: {
     ssl: {
       rejectUnauthorized: false,
+      require: true,
     },
   },
 });

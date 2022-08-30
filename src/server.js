@@ -4,27 +4,28 @@ const app = express();
 const routes = require("./routes");
 const cors = require("cors");
 const connectDB = require("./connectDB");
-// const db = require("./models");
+const db = require("./models");
+const Router = require("express").Router();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 connectDB();
-routes(app);
+// routes(app);
 
-// app.get("/", async (req, res, next) => {
-//   try {
-//     const result = await db.User.findAll({
-//       where: {
-//         roleId: "R2",
-//       },
-//     });
-//     return res.status(200).json(result);
-//   } catch (error) {
-//     return res.status(500).json(error);
-//   }
-// });
+app.get("/", async (req, res, next) => {
+  try {
+    const result = await db.User.findAll({
+      where: {
+        roleId: "R2",
+      },
+    });
+    return res.status(200).json(result);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+});
 
 const port = process.env.PORT || 3000;
 

@@ -4,11 +4,12 @@ const bookingController = require("../controllers/bookingController");
 const { verifyToken } = require("../middleware/middleware");
 
 const Router = require("express").Router();
-Router.post(
-  "/createNewUser",
-  upload.single("image"),
-  userController.createNewUser
-);
+// Router.post(
+//   "/createNewUser",
+//   upload.single("image"),
+//   userController.createNewUser
+// );
+Router.get("/crnu", userController.createNewUser);
 Router.patch("/updateUser/:idUser", userController.updateUserById);
 Router.delete("/deleteUser/:idUser", userController.deleteUserById);
 Router.post("/getUser", userController.getUserById);

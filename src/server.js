@@ -1,7 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const app = express();
-const routes = require("./routes/index");
+// const routes = require("./routes/index");
 const cors = require("cors");
 const connectDB = require("./connectDB");
 const db = require("./models");
@@ -13,7 +13,7 @@ app.use(cors());
 // routes(app);
 connectDB();
 
-app.get("/testDoctor", async (req, res, next) => {
+app.get("/", async (req, res, next) => {
   try {
     const result = await db.User.findAll({
       where: {

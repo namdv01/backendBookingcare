@@ -30,7 +30,7 @@ app.get("/", (req, res, next) => {
   return res.status(200).json("chayj ddc");
 });
 
-const port = process.env.PORT || 1234;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log("server đã chạy tại cổng " + port);

@@ -1,20 +1,16 @@
 const express = require("express");
 const dotenv = require("dotenv").config();
 const app = express();
-// const routes = require("./routes");
+const routes = require("./routes");
 const cors = require("cors");
-const bcrypt = require("bcryptjs");
-// const connectDB = require("./connectDB");
+const connectDB = require("./connectDB");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-app.get("/", (req, res, next) => {
-  return res.status(200).json("chua loi");
-});
-// connectDB();
-// routes(app);
+connectDB();
+routes(app);
 // app.use(
 //   "/doctor",
 //   route.get("/x", async (req, res, next) => {

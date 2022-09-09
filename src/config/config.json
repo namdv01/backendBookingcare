@@ -1,9 +1,9 @@
 {
   "development": {
-    "username": "dctcjsufeyqvak",
-    "password": "988c62eae2833de5e5eeae354719e5c6fffe2c831b67ee7214b918d1692eac06",
-    "database": "d48mtfmd8445po",
-    "host": "ec2-44-207-126-176.compute-1.amazonaws.com",
+    "username": "cxeekxxa",
+    "password": "U_q1rdMjQQHJ9iIXFWWlc8a3qnjZI8L7",
+    "database": "cxeekxxa",
+    "host": "satao.db.elephantsql.com",
     "dialect": "postgres",
     "query": {
       "raw": true
@@ -18,10 +18,10 @@
     "timezone": "+07:00"
   },
   "test": {
-    "username": "dctcjsufeyqvak",
-    "password": "988c62eae2833de5e5eeae354719e5c6fffe2c831b67ee7214b918d1692eac06",
-    "database": "d48mtfmd8445po",
-    "host": "ec2-44-207-126-176.compute-1.amazonaws.com",
+    "username": "cxeekxxa",
+    "password": "U_q1rdMjQQHJ9iIXFWWlc8a3qnjZI8L7",
+    "database": "cxeekxxa",
+    "host": "satao.db.elephantsql.com",
     "dialect": "postgres",
     "query": {
       "raw": true
@@ -36,10 +36,10 @@
     "timezone": "+07:00"
   },
   "production": {
-    "username": "dctcjsufeyqvak",
-    "password": "988c62eae2833de5e5eeae354719e5c6fffe2c831b67ee7214b918d1692eac06",
-    "database": "d48mtfmd8445po",
-    "host": "ec2-44-207-126-176.compute-1.amazonaws.com",
+    "username": "cxeekxxa",
+    "password": "U_q1rdMjQQHJ9iIXFWWlc8a3qnjZI8L7",
+    "database": "cxeekxxa",
+    "host": "satao.db.elephantsql.com",
     "dialect": "postgres",
     "query": {
       "raw": true
